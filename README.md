@@ -1,3 +1,9 @@
+# Heroku App Deploy
+https://rasquin-django-todo.herokuapp.com/
+
+# Heroku Remote Repository
+https://git.heroku.com/rasquin-django-todo.git
+
 # Install Django 1.11
 sudo pip3 install django==1.11
 
