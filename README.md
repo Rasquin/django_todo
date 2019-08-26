@@ -15,3 +15,9 @@ cog --> show home in favorites + hidden files --> workspace folder --> .bash_ali
 alias run="python3 ~/workspace/manage.py runserver $IP:$C9_PORT" 
 the ~/workspace/manage.py is to ensure that no matter what directory we are in we have an absolute path to
 manage.py file which will execute the command.
+
+# Install Heroku
+. Update npm, CLI
+$ nvm i v8         # Any version > 8 will do e.g. nvm i v9 
+. Install heroku cli
+$ npm install -g heroku
