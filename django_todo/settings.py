@@ -26,7 +26,8 @@ SECRET_KEY = 'l8apluje9^xe5g5xrreg5mym9$&!1t_pcre292jv-h8sj2^ue-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['7a1b23e878be477493fff172cccfd29c.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['7a1b23e878be477493fff172cccfd29c.vfs.cloud9.us-east-1.amazonaws.com',
+                'https://rasquin-django-todo.herokuapp.com/']
 
 
 # Application definition
