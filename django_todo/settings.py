@@ -98,9 +98,10 @@ if development:
         }
     }
 else:
-    DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    #DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
 
-#DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
+
 
 #DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
