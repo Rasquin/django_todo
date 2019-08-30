@@ -33,8 +33,10 @@ variable.
 ALLOWED_HOSTS = ['7a1b23e878be477493fff172cccfd29c.vfs.cloud9.us-east-1.amazonaws.com',
                 'rasquin-django-todo.herokuapp.com']
 """
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
-                os.environ.get('HOSTNAME')]
+#ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+#                os.environ.get('HOSTNAME')]
+ALLOWED_HOSTS = ['7a1b23e878be477493fff172cccfd29c.vfs.cloud9.us-east-1.amazonaws.com',
+                'rasquin-django-todo.herokuapp.com']
 
 # Application definition
 
@@ -88,9 +90,9 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
-#DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
+DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
 
-DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+#DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
