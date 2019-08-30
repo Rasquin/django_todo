@@ -13,6 +13,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False  
+    
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'l8apluje9^xe5g5xrreg5mym9$&!1t_pcre292jv-h8sj2^ue-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 """
 1st those where the allowed hosts, but later we decided to automatize them as environment
@@ -84,13 +90,17 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3', 
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+#DATABASES = { 'default': dj_database_url.parse("postgres://wpijjjmavujnkq:e74bd851b04e5f8f0a105ed9362e797b7e89b4648e30fa84912469f5a06d02ae@ec2-54-217-225-16.eu-west-1.compute.amazonaws.com:5432/d8jj5e5ru177b")}
 
 #DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
